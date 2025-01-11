@@ -4,7 +4,8 @@ import { authGuard } from './guards/auth.guard';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { AccountsComponent } from './pages/accounts/accounts.component';
-import { TransactionsComponent } from './pages/user-transactions/transactions/transactions.component';
+import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { BankNewsComponent } from './pages/bank-news/bank-news.component';
 
 export const routes: Routes = [
   {
@@ -16,11 +17,18 @@ export const routes: Routes = [
   },
   {
     path: 'accounts',
-    component: AccountsComponent
+    component: AccountsComponent,
+    canActivate: [authGuard]
   },
   {
     path: 'transactions',
-    component: TransactionsComponent
+    component: TransactionsComponent,
+    canActivate: [authGuard]
+  },
+  {
+    path: 'ebanky-news',
+    component: BankNewsComponent,
+    canActivate: [authGuard]
   },
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' }
 ];

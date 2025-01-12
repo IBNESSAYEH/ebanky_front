@@ -1,0 +1,138 @@
+<div class="w-full flex justify-center items-center min-h-screen bg-indigo-50 py-8">
+  <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="bg-white shadow-xl rounded-lg p-8 space-y-6 w-full md:w-2/3 lg:w-1/2"> -->
+    <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">Register</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- First Name -->
+      <div class="space-y-2">
+        <label class="block text-sm font-medium text-gray-700">First Name</label>
+        <div class="relative">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <input formControlName="firstname" type="text"
+                 class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                 placeholder="First name">
+          @if (registerForm.get('firstname')?.invalid && registerForm.get('firstname')?.touched) {
+            <span class="text-red-400">First name is required</span>
+          }
+        </div>
+      </div>
+
+      <!-- Last Name -->
+      <div class="space-y-2">
+        <label class="block text-sm font-medium text-gray-700">Last Name</label>
+        <div class="relative">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <input formControlName="lastname" type="text"
+                 class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                 placeholder="Last name">
+          @if (registerForm.get('lastname')?.invalid && registerForm.get('lastname')?.touched) {
+            <span class="text-red-400">Last name is required</span>
+          }
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="space-y-2">
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <div class="relative">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <input formControlName="email" type="email"
+                 class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                 placeholder="Email">
+          @if (registerForm.get('email')?.invalid && registerForm.get('email')?.touched) {
+            <span class="text-red-400">Valid email is required</span>
+          }
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="space-y-2">
+        <label class="block text-sm font-medium text-gray-700">Password</label>
+        <div class="relative">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+          <input formControlName="password" [type]="showPassword ? 'text' : 'password'"
+                 class="block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                 placeholder="Password">
+          <button type="button" (click)="togglePassword()" class="absolute right-3 top-1/2 -translate-y-1/2">
+            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </button>
+          @if (registerForm.get('password')?.invalid && registerForm.get('password')?.touched) {
+            <span class="text-red-400">Password must be at least 8 characters</span>
+          }
+        </div>
+      </div>
+
+      <!-- Age -->
+      <div class="space-y-2">
+        <label class="block text-sm font-medium text-gray-700">Age</label>
+        <div class="relative">
+          <input formControlName="age" type="number"
+                 class="block w-full pl-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                 placeholder="Age">
+          @if (registerForm.get('age')?.invalid && registerForm.get('age')?.touched) {
+            <span class="text-red-400">Age must be at least 18</span>
+          }
+        </div>
+      </div>
+
+      <!-- Role -->
+      <div class="space-y-2">
+        <label class="block text-sm font-medium text-gray-700">Role</label>
+        <div class="relative">
+          <select formControlName="role"
+                  class="block w-full pl-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="USER">User</option>
+            <option value="ADMIN">Admin</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Monthly Income -->
+      <div class="space-y-2">
+        <label class="block text-sm font-medium text-gray-700">Monthly Income</label>
+        <div class="relative">
+          <span class="absolute left-3 top-1/2 -translate-y-1/2">$</span>
+          <input formControlName="monthlyIncome" type="number"
+                 class="block w-full pl-8 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                 placeholder="Monthly Income">
+        </div>
+      </div>
+
+      <!-- Credit Score -->
+      <div class="space-y-2">
+        <label class="block text-sm font-medium text-gray-700">Credit Score</label>
+        <div class="relative">
+          <input formControlName="creditScore" type="number"
+                 class="block w-full pl-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                 placeholder="Credit Score">
+        </div>
+      </div>
+    </div>
+
+    <button type="submit"
+
+            class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium transition-colors disabled:opacity-50">
+      Register
+    </button>
+
+    <div class="space-y-4 mt-6">
+      <div class="text-center">
+        <span class="text-gray-600">have an account?</span>
+        <a routerLink="/auth/login" class="text-blue-600 hover:text-blue-700 ml-2">Login</a>
+      </div>
+    </div>
+  <!-- </form> -->
+ </div>

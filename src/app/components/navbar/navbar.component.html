@@ -1,0 +1,55 @@
+<nav class="fixed top-0 right-0 left-0 bg-white/90 backdrop-blur-sm border-b z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a class="flex items-center">
+          <img class="h-8 w-auto" src="images/Ebanky-removebg-preview.png" alt="Ebanky Logo">
+        </a>
+      </div>
+
+      <!-- Navigation & Search -->
+      <div class="flex items-center gap-8">
+        <!-- Main Navigation -->
+
+
+
+
+        <!-- User Menu -->
+        @if(authService.getToken()){
+          <div class="relative group">
+            <button class="flex items-center">
+              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                   class="w-10 h-10 rounded-full ring-2 ring-gray-200 transition-all
+                          group-hover:ring-blue-100"
+                   alt="Profile">
+            </button>
+            <ul class="hidden group-hover:block absolute right-0 mt-2 bg-white border
+                       rounded-xl p-1 w-56 shadow-lg animate-fadeIn">
+              <li>
+                <a class="flex items-center justify-between px-4 py-2 text-sm text-gray-700
+                          hover:bg-gray-50 rounded-lg transition-colors">
+                  Profile
+                  <span class="bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full">New</span>
+                </a>
+              </li>
+              <li>
+                <a class="flex items-center px-4 py-2 text-sm text-gray-700
+                          hover:bg-gray-50 rounded-lg transition-colors">
+                  Settings
+                </a>
+              </li>
+              <li>
+                <button (click)="authService.logout()"
+                        class="w-full text-left px-4 py-2 text-sm text-red-600
+                               hover:bg-red-50 rounded-lg transition-colors">
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</nav>

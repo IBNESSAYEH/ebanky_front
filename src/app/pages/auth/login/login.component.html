@@ -1,0 +1,92 @@
+<div class="w-full flex justify-center items-center h-screen bg-indigo-50">
+  <form (ngSubmit)="submit()" [formGroup]="loginForm" class="bg-white shadow-xl rounded-lg p-8 space-y-6 w-full md:w-2/3 lg:w-1/2 h-4/5">
+      <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">Login</h2>
+@if(errorMessge){
+  <div role="alert" class="alert alert-error">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 shrink-0 stroke-current"
+      fill="none"
+      viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <span>{{errorMessge}}.</span>
+  </div>
+
+
+}
+
+
+      <div class="space-y-2">
+          <label class="block text-sm font-medium text-gray-700">
+              Email
+          </label>
+          <div class="relative">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <input formControlName="email"
+              type="email"
+                     class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg
+                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                     placeholder="Enter your email">
+              @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+                @if(loginForm.get('email')?.hasError('required')){
+                  <span class="text-red-400">the name is required</span>
+                }
+              }
+          </div>
+      </div>
+
+      <div class="space-y-2">
+          <label class="block text-sm font-medium text-gray-700">
+              Password
+          </label>
+          <div class="relative">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+              <input formControlName="password"
+              type="password"
+                     class="block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg
+                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                     placeholder="Enter your password">
+                     @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+                      @if(loginForm.get('password')?.hasError('required') || loginForm.get('password')?.hasError('pattern')){
+                        <span class="text-red-400">password must have at least 8 chars</span>
+                      }
+                    }
+              <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2">
+                  <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                  </svg>
+              </button>
+          </div>
+      </div>
+
+      <div class="pt-2">
+          <button type="submit"
+                  class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg
+                         hover:bg-blue-700 focus:outline-none focus:ring-4
+                         focus:ring-blue-300 font-medium transition-colors">
+              Sign In
+          </button>
+        </div>
+
+      <div class="space-y-4 mt-6">
+        <div class="text-center">
+          <span class="text-gray-600">Don't have an account?</span>
+          <a routerLink="/auth/register" class="text-blue-600 hover:text-blue-700 ml-2">Register</a>
+        </div>
+      </div>
+
+
+  </form>
+
+
+</div>

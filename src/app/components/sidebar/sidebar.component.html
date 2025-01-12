@@ -1,0 +1,78 @@
+
+<aside class="fixed top-0 left-0 h-screen w-60 bg-white text-white shadow-xl">
+  <div class="flex flex-col h-full">
+    <div class="h-16 flex items-center px-6 border-b border-gray-800">
+      <span class="text-xl text-black font-bold">Dashboard</span>
+    </div>
+
+    <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+      <!-- Dashboard -->
+      <a routerLink="/dashboard" class="flex items-center px-4 py-3 text-black hover:text-white rounded-lg hover:bg-gray-800 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+        </svg>
+        Dashboard
+      </a>
+
+      <!-- Users -->
+      <a routerLink="/users" class="flex items-center px-4 py-3 text-black hover:text-white rounded-lg hover:bg-gray-800 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
+        Users
+      </a>
+
+      <!-- Accounts -->
+      <a routerLink="/accounts" class="flex items-center px-4 py-3 text-black hover:text-white rounded-lg hover:bg-gray-800 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+        </svg>
+        Accounts
+      </a>
+
+      <!-- Loans -->
+      <a routerLink="/loans" class="flex items-center px-4 py-3 text-black hover:text-white rounded-lg hover:bg-gray-800 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+        </svg>
+        Loans
+      </a>
+
+      <!-- Invoices -->
+      <a routerLink="/invoices" class="flex items-center px-4 py-3 text-black hover:text-white rounded-lg hover:bg-gray-800 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        Invoices
+      </a>
+
+      <!-- Transactions -->
+      <a routerLink="/transactions" class="flex items-center px-4 py-3 text-black hover:text-white rounded-lg hover:bg-gray-800 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+        </svg>
+        Transactions
+      </a>
+
+      <!-- News -->
+      <a routerLink="/ebanky-news" class="flex items-center px-4 py-3 text-black hover:text-white rounded-lg hover:bg-gray-800 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+        </svg>
+
+        Ebanky News
+      </a>
+     </nav>
+
+    <div class="p-4 border-t border-gray-800">
+      <div class="flex items-center">
+        <img src="https://ui-avatars.com/api/?name=John+Doe"
+             class="w-8 h-8 rounded-full">
+        <div class="ml-3">
+          <p class="text-sm font-medium">John Doe</p>
+          <p class="text-xs text-gray-500">Admin</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

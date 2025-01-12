@@ -6,6 +6,8 @@ import { RegisterComponent } from './pages/auth/register/register.component';
 import { AccountsComponent } from './pages/accounts/accounts.component';
 import { TransactionsComponent } from './pages/transactions/transactions.component';
 import { BankNewsComponent } from './pages/bank-news/bank-news.component';
+import { FormAccountsComponent } from './components/account/form-accounts/form-accounts.component';
+import { UsersComponent } from './pages/users/users.component';
 
 export const routes: Routes = [
   {
@@ -21,9 +23,18 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
+    path: 'users',
+    component: UsersComponent,
+    canActivate: [authGuard]
+  },
+  {
     path: 'transactions',
     component: TransactionsComponent,
     canActivate: [authGuard]
+  },
+  {
+    path: 'accounts/create',
+    component: FormAccountsComponent
   },
   {
     path: 'ebanky-news',

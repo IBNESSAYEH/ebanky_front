@@ -15,7 +15,6 @@
         <tbody class="bg-white divide-y divide-gray-200">
           @for(user of usersData; track user.id){
             <tr class="hover:bg-gray-50 transition-colors duration-200">
-              <!-- User Info -->
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
                   <div class="h-10 w-10 flex-shrink-0">
@@ -34,7 +33,6 @@
                 </div>
               </td>
 
-              <!-- Role -->
               <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2.5 py-1 text-xs font-medium rounded-full"
                       [class]="user.role === 'ADMIN' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'">
@@ -42,27 +40,22 @@
                 </span>
               </td>
 
-              <!-- Age -->
               <td class="hidden md:table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 {{user.age || 'N/A'}}
               </td>
 
-              <!-- Credit Score -->
               <td class="hidden md:table-cell px-6 py-4 whitespace-nowrap">
                 <div class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium"
                      [class]="user.creditScore > 700 ? 'bg-green-50 text-green-700' : 'bg-yellow-50 text-yellow-700'">
                   {{user.creditScore}}
                 </div>
               </td>
-
-              <!-- Total Balance -->
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
                   {{user.totalSolde !== null ? (user.totalSolde | number:'1.2-2') + ' MAD' : 'N/A'}}
                 </div>
               </td>
 
-              <!-- Actions -->
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex space-x-2">
                   <button data-tip="update user"

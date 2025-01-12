@@ -3,7 +3,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       @for(user of usersData; track user.id){
         <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden">
-          <!-- Card Header - Reorganized with role under email -->
+
           <div class="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-b">
             <div class="flex items-center gap-4">
               <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-200 flex items-center justify-center shadow-sm">
@@ -25,9 +25,7 @@
             </div>
           </div>
 
-          <!-- Card Body -->
           <div class="p-6 space-y-4">
-            <!-- Status Section -->
             <div class="grid grid-cols-2 gap-4">
               <div class="p-3 rounded-lg bg-slate-50">
                 <p class="text-xs text-slate-500 mb-1">Age</p>
@@ -41,8 +39,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- Financial Info -->
             <div class="space-y-3 bg-slate-50 rounded-lg p-4">
               <div class="flex items-center justify-between">
                 <span class="text-sm text-slate-500">Monthly Income</span>
@@ -59,7 +55,6 @@
             </div>
           </div>
 
-          <!-- Card Footer -->
           <div class="px-6 py-4 bg-slate-50 border-t flex justify-end space-x-2">
             <button data-tip="Update user"
                     class="tooltip inline-flex items-center p-2 text-sm font-medium text-emerald-600 bg-white rounded-lg

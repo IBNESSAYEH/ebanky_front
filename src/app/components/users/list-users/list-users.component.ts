@@ -10,7 +10,7 @@ import { User, UserData } from '../../../models/user';
     imports: [
         EditIconComponent, DeleteIconComponent,
         DecimalPipe,
-        NgClass, CommonModule
+        CommonModule
       ],
   templateUrl: './list-users.component.html',
   styleUrl: './list-users.component.css'

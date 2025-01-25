@@ -3,7 +3,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       @for(user of usersData; track user.id){
         <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden">
-
+          <!-- User Header -->
           <div class="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-b">
             <div class="flex items-center gap-4">
               <div class="w-12 h-12 rounded-full bg-white border-2 border-blue-200 flex items-center justify-center shadow-sm">
@@ -13,18 +13,20 @@
               </div>
               <div class="flex-1">
                 <h3 class="font-medium text-gray-900">
-                  {{user.firstName.length > 15 ? user.firstName.slice(0, 15) + '...' : user.firstName}}
-                  {{user.lastName.length > 15 ? user.lastName.slice(0, 15) + '...' : user.lastName}}
+                  {{user.firstName | slice:0:15}}{{user.firstName.length > 15 ? '...' : ''}}
+                  {{user.lastName | slice:0:15}}{{user.lastName.length > 15 ? '...' : ''}}
                 </h3>
                 <p class="text-sm text-gray-500 truncate">{{user.email}}</p>
                 <span class="mt-1 inline-block px-2.5 py-0.5 text-xs font-medium rounded-full"
-                      [class]="user.role === 'ADMIN' ? 'bg-violet-100 text-violet-800' : 'bg-sky-100 text-sky-800'">
+                      [ngClass]="{'bg-violet-100 text-violet-800': user.role === 'ADMIN',
+                                'bg-sky-100 text-sky-800': user.role !== 'ADMIN'}">
                   {{user.role}}
                 </span>
               </div>
             </div>
           </div>
 
+          <!-- User Details -->
           <div class="p-6 space-y-4">
             <div class="grid grid-cols-2 gap-4">
               <div class="p-3 rounded-lg bg-slate-50">
@@ -34,11 +36,14 @@
               <div class="p-3 rounded-lg bg-slate-50">
                 <p class="text-xs text-slate-500 mb-1">Credit Score</p>
                 <div class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium"
-                     [class]="user.creditScore > 700 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'">
+                     [ngClass]="{'bg-emerald-100 text-emerald-800': user.creditScore > 700,
+                               'bg-amber-100 text-amber-800': user.creditScore <= 700}">
                   {{user.creditScore}}
                 </div>
               </div>
             </div>
+
+            <!-- Financial Info -->
             <div class="space-y-3 bg-slate-50 rounded-lg p-4">
               <div class="flex items-center justify-between">
                 <span class="text-sm text-slate-500">Monthly Income</span>
@@ -55,15 +60,17 @@
             </div>
           </div>
 
+          <!-- Action Buttons -->
           <div class="px-6 py-4 bg-slate-50 border-t flex justify-end space-x-2">
-            <button data-tip="Update user"
+            <!-- (click)="onUpdate(user)" -->
+            <button
                     class="tooltip inline-flex items-center p-2 text-sm font-medium text-emerald-600 bg-white rounded-lg
                            hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500
                            transition-colors duration-200 shadow-sm">
               <app-edit-icon [size]="4"></app-edit-icon>
             </button>
+            <!-- (click)="onDelete(user)" -->
             <button
-                    data-tip="Delete user"
                     class="tooltip inline-flex items-center p-2 text-sm font-medium text-rose-600 bg-white rounded-lg
                            hover:bg-rose-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500
                            transition-colors duration-200 shadow-sm">

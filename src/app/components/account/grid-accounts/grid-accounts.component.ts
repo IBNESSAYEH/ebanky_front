@@ -11,7 +11,7 @@ import { CommonModule, CurrencyPipe, DecimalPipe, NgClass } from '@angular/commo
    imports: [
     EditIconComponent, DeleteIconComponent,
     DecimalPipe,
-    NgClass, CommonModule
+    CommonModule
   ],
   templateUrl: './grid-accounts.component.html',
   styleUrl: './grid-accounts.component.css'

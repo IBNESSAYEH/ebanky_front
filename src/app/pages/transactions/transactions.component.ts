@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-transactions',
@@ -9,4 +10,7 @@ import { Component } from '@angular/core';
 export class TransactionsComponent {
   transactionTableColumns: string[] = ["firstname", "lastname", "email", "password", "age", "role", "monthlyIncome", "creditScore"];
 
+  constructor(private store: Store){
+
+  }
 }

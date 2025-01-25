@@ -10,7 +10,7 @@ import { DeleteIconComponent } from '../../icons/delete-icon/delete-icon.compone
   imports: [
     EditIconComponent, DeleteIconComponent,
     DecimalPipe,
-    NgClass, CommonModule
+    CommonModule
   ],
   templateUrl: './list-accounts.component.html',
   styleUrl: './list-accounts.component.css'

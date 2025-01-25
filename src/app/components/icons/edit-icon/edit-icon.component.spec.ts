@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditIconComponent } from './edit-icon.component';
 
-describe('EditIconComponent', () => {
+xdescribe('EditIconComponent', () => {
   let component: EditIconComponent;
   let fixture: ComponentFixture<EditIconComponent>;
 

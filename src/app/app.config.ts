@@ -4,7 +4,7 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { routes } from './app.routes';
 import { authInterceptor } from './interceptors/auth.interceptor';
 import { provideStore } from '@ngrx/store';
-import { transactionReducer } from './stores/transactions-store/transaction.reducer';
+import { transactionReducer } from './store/transactions/transaction.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
